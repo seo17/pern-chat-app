@@ -1,10 +1,13 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
+import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
   return (
     <div className="p-4 h-screen flex items-center justify-center">
-      <Outlet />
+      <AuthContextProvider>
+        <Outlet />
+      </AuthContextProvider>
     </div>
   );
 }
