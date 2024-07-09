@@ -5,7 +5,7 @@ import { useLogin } from "../hooks";
 
 const Login = () => {
   const { authUser } = useAuthContext();
-  const { login } = useLogin();
+  const { loading, login } = useLogin();
   const [inputs, setInputs] = useState({
     username: "",
     password: "",
@@ -66,7 +66,9 @@ const Login = () => {
           </Link>
 
           <div>
-            <button className="btn btn-block btn-sm mt-2">Login</button>
+            <button className="btn btn-block btn-sm mt-2" disabled={loading}>
+              {loading ? "Loading" : "Login"}
+            </button>
           </div>
         </form>
       </div>
