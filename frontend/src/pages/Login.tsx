@@ -1,8 +1,23 @@
+import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
+import { useLogin } from "../hooks";
 
 const Login = () => {
   const { authUser } = useAuthContext();
+  const { login } = useLogin();
+  const [inputs, setInputs] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleFormSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    console.log(inputs);
+
+    login(inputs);
+  };
 
   if (authUser) return <Navigate to={"/"} />;
   return (
@@ -13,7 +28,7 @@ const Login = () => {
           <span className="text-blue-500"> ChatApp</span>
         </h1>
 
-        <form>
+        <form onSubmit={handleFormSubmit}>
           <div>
             <label className="label p-2 ">
               <span className="text-base label-text">Username</span>
@@ -22,6 +37,10 @@ const Login = () => {
               type="text"
               placeholder="Enter username"
               className="w-full input input-bordered h-10"
+              value={inputs.username}
+              onChange={(event) =>
+                setInputs({ ...inputs, username: event.target.value })
+              }
             />
           </div>
 
@@ -33,6 +52,10 @@ const Login = () => {
               type="password"
               placeholder="Enter Password"
               className="w-full input input-bordered h-10"
+              value={inputs.password}
+              onChange={(event) =>
+                setInputs({ ...inputs, password: event.target.value })
+              }
             />
           </div>
           <Link
