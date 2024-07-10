@@ -86,8 +86,6 @@ export const getMessage: RequestHandler = async (req, res) => {
     }
 
     res.status(200).json(conversation.messages);
-
-    console.log("thinking");
   } catch (error: any) {
     console.error("Error in getMessage", error.message);
     res.status(500).json({ error: "Internal server error" });
