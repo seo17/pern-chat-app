@@ -1,5 +1,5 @@
 import { Search } from "lucide-react";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import useConversation from "../../zustand/useConversation";
 import { useGetConversations } from "../../hooks";
