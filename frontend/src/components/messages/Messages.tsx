@@ -1,4 +1,4 @@
-import useGetMessages from "../../hooks/useGetMessages";
+import { useGetMessages } from "../../hooks";
 import MessageSkeleton from "../skeletons/MessageSkeleton";
 import Message from "./Message";
 
