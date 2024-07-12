@@ -37,8 +37,7 @@ jspm_packages
 .node_repl_history
 .DS_Store
 
-#Excluding build directory
-public/
+
 
 node_modules
 # Keep environment variables out of version control
@@ -81,9 +80,6 @@ bower_components
 .DS_Store
 Thumbs.db
 
-# Ignore built ts files
-dist/**/*
-
 node_modules/
 bundle.js
 npm-debug.log
@@ -95,9 +91,7 @@ npm-debug.log
 .passport.js
 .DS_Store
 
-build/
-dist/
-client/.parcel-cache
+
 
 # Logs
 logs
@@ -108,10 +102,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+
 
 # Editor directories and files
 .vscode/*
