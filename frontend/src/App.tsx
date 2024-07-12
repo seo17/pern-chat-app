@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import "./App.css";
 import { AuthContextProvider } from "./context/AuthContext";
 import { Toaster } from "react-hot-toast";
 import SocketContextProvider from "./context/SocketContext";
