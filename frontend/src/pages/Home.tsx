@@ -4,7 +4,7 @@ import Sidebar from "../components/sidebar/Sidebar";
 import { useAuthContext } from "../context/AuthContext";
 
 const Home = () => {
-  const { authUser, setAuthUser, isLoading } = useAuthContext();
+  const { authUser } = useAuthContext();
 
   if (!authUser) return <Navigate to={"/login"} />;
   return (
